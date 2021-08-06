@@ -1,0 +1,205 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    width: 100%;
+    background-color: blueviolet ;
+    height: 100px;
+}
+
+.ancho
+{
+    width: 80%;
+    height: 100px;
+    background: blueviolet;
+    margin: auto;
+}
+
+.logo
+{
+    width: 20%;
+    height: 100px;
+    background:blueviolet;
+    float: left;
+}
+
+.logo figure img
+{
+    width: 75%;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.titulo-nombre
+{
+    width: 60%;
+    height: 100px;
+    background: blueviolet;
+    float: left;
+    box-sizing: border-box;
+}
+
+.titulo-nombre p
+{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 60px;
+    color:black;
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align-last: justify;
+}
+
+nav
+{
+    width: 20%;
+    height: 100px;
+    background: blueviolet;
+    float: left;
+    text-align: right;
+    padding-top: 24px;
+    box-sizing: border-box;
+}
+
+.enlace-soporte
+{
+    margin-top: 20px;    
+    list-style: none;
+}
+
+nav ul li a
+{
+    color: black;
+    font-size: 15px;
+    font-family: 'Krona One', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover
+{
+    color: chartreuse;
+}
+
+.principal
+{
+    width: 93%;
+    height: 400px;
+    background-color: rgb(145, 111, 148);
+    margin-top: 0;
+    padding: 60px;
+}
+
+.fondo-izq
+{
+    width: 20%;
+    height: 400px;
+    float: left;
+    margin: auto;
+}
+
+.fondo-izq figure img
+{
+    width: 75%;
+    height: 400px;
+    margin-left: 20px;
+    margin-right: -10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+.fondo-der
+{
+    width: 20%;
+    height: 400px;
+    float: left;
+    margin: auto;
+}
+
+.fondo-der figure img
+{
+    width: 75%;
+    height: 400px;
+    margin-left: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.sec-dimension
+{
+    width: 60%;
+    height: 400px;
+    background-color:rgb(145, 111, 148);
+    margin: auto;
+    padding-top:0;
+    float: left;
+
+}
+
+
+button
+{
+    width: 200px;
+    height: 90px;
+    font-weight: bold;
+    font-family: 'Krona One', sans-serif;
+    font-size: 15px;
+    background-color: rgb(46, 5, 54);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+button a
+{
+    text-decoration: none;
+    color: honeydew;
+}
+.administrador
+{
+    padding-left: 250px;
+    padding-right: 100px;  
+}
+
+.compras
+{
+    padding-left: 50px;
+    padding-top: 15px;
+    float: left;
+    margin-right: 200px;
+}
+
+.ventas
+{
+    padding-top: 15px;
+}
+
+.almacen
+{
+    padding-left: 50px;
+    padding-top: 15px;
+    float: left;
+    margin-right: 200px;
+}
+
+.produccion
+{
+    padding-top: 15px;
+}
+
+
+
