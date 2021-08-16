@@ -1,0 +1,56 @@
+main
+{
+    padding: 0;
+    margin: 0;
+    background:linear-gradient(to right, #00AAFF, #00FF6C);
+    height: 335px;
+    width: 459px;
+    margin: auto;
+    margin-top: 146px;
+    border: solid;
+    border-radius: 20px;
+    border-color: darkcyan;
+
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 42px;
+}
+
+.datos {
+    margin-top: 51px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+input{
+    width: 100px;
+    height: 45px;
+    border-radius: 8px;
+    margin-left: 177px;
+    font-size: 30px;
+}
+
+button {
+    width: 44px;
+    height: 49px;
+    font-size: 31px;
+    font-weight: bold;
+    color: blue;
+    border-radius: 9px;
+    margin-right: 9px;
+}
+
+button:hover{
+    color: rgb(23, 235, 34);
+    transition:all 0.9s ease;
+    transform:scale(1.25);
+}
