@@ -40,3 +40,7 @@ body{
 .bg-light{
     background-color: var(--color-light);
 }
+
+.border-right{
+    border-right: 1px solid rgba(256,256,256,1) !important;
+}
