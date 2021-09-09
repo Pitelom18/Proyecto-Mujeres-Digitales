@@ -9,11 +9,19 @@ userController.Guardar=function(request,response) {
         nombre:request.body.nombre,
         email:request.body.email,
         edad:request.body.edad
-
-        if (post.nombre) {
-            
-        }
     }
+
+    if(post.nombre== "" || post.nombre == null || post.nombre== undefined) {
+         response.json({state:false, mensaje:"El campo nombre es obligatorio"})   
+    }
+
+    if(post.email== "" || post.email == null || post.email== undefined) {
+        response.json({state:false, mensaje:"El campo email es obligatorio"})   
+   }
+
+   if(post.edad== "" || post.edad == null || post.edad== undefined) {
+    response.json({state:false, mensaje:"El campo edad es obligatorio"})   
+}
 }
 
 //hay datos que no se modifican por ser como identificadores primarios entre ellos el email y el usuario.
@@ -21,6 +29,7 @@ userController.Modificar=function(request,response) {
     var post = {
         nombre:request.body.nombre,
         edad:request.body.edad 
+    }
 }
 
 userController.Eliminar=function(request,response) {
