@@ -1,3 +1,8 @@
+
+//esta se puede copiar del enlace que se hizo en routes y se le cambian los nombres que correspondan en este caso model
+var modelUsuarios = require(appRoot + '/api/models/userModel.js').usuariob
+
+
 var MD5 = require('md5')
 
 
@@ -12,46 +17,103 @@ userController.Guardar=function(request,response) {
     }
 
     if (post.nombre=="" || post.nombre == null || post.nombre == undefined) {
-         response.json({state:false,mensaje:"El campo nombre es obligatorio"})   
+         response.json({state:false,mensaje:"El campo nombre es obligatorio"}) 
+        return false   
     }
 
     if (post.email=="" || post.email == null || post.email == undefined) {
-        response.json({state:false,mensaje:"El campo email es obligatorio"})   
-   }
+        response.json({state:false,mensaje:"El campo email es obligatorio"})
+        return false
+    }
 
-   if (post.edad=="" || post.edad == null || post.edad == undefined) {
-    response.json({state:false,mensaje:"El campo edad es obligatorio"})   
-}
+    if (post.edad=="" || post.edad == null || post.edad == undefined) {
+    response.json({state:false,mensaje:"El campo edad es obligatorio"})
+        return false    
+    }
+
+        //como parametro de la funcion se coloca algo como respuesta al callback del controlador
+        modelUsuarios.Guardar(post,function(respuesta) {
+        //console.log(respuesta)
+        response.json(respuesta)
+    })
 }
 
 //hay datos que no se modifican por ser como identificadores primarios entre ellos el email y el usuario.
 userController.Modificar=function(request,response) {
     var post = {
         nombre:request.body.nombre,
-        edad:request.body.edad
+        edad:request.body.edad,
+        id:request.body.id
+        //posicion:request.body.posicion este seria para trabajar en memoria y es remplazado por id:request.body.id
+        //Este parametro pocision viene del modelo. Se usará para decir que posision tiene el dato que se quiere modificar
+        
     } 
+    //aqui cambiamos post.posicion por post.id
+    if (post.id =="" || post.id == null || post.id == undefined) {
+        response.json({state:false,mensaje:"El campo id es obligatorio"})
+        return false
+    }
+
+    if (post.nombre=="" || post.nombre == null || post.nombre == undefined) {
+         response.json({state:false,mensaje:"El campo nombre es obligatorio"}) 
+        return false   
+    }
+        console.log(post)
+
+    if (post.edad =="" || post.edad == null || post.edad == undefined) {
+    response.json({state:false,mensaje:"El campo edad es obligatorio"})
+        return false    
+    }
+
+    modelUsuarios.Modificar(post,function(respuesta) {
+      console.log(respuesta)   
+        response.json(respuesta)
+    })
 }
 
 userController.Eliminar=function(request,response) {
-    
+    //se debe capturar un dato en determinada posicion
+    var post = {
+        //posicion:request.body.posicion 
+        id:request.body.id
+    }
+
+    //se obliga a que de una posicion mediante una validacion
+
+    if (post.id=="" || post.id == null || post.id == undefined)
+    //se cambio post.posicion por post.id
+     {
+        response.json({state:false,mensaje:"El campo id es obligatorio"})
+        return false
+    }
+
+    //llamamos al modelo
+
+    modelUsuarios.Eliminar(post,function(respuesta) {
+        response.json(respuesta)
+    })
 }
 
 userController.Listar=function(request,response) {
     
+   modelUsuarios.Listar(null,function(respuesta) {
+        response.json(respuesta)
+    })
+    //despues de .Listar habria (post,function(){}) pero como en este caso no hay procesamiento en el modelo ni tampoco peticion de datos se coloca null
 }
 
-
-
-
-
-
-
-
-
-
-
-
+//la variable usuario conecta con routes en el require que hace del controlador
 module.exports.usuario = userController
+
+
+
+
+
+
+
+
+
+
 // var misdatos= [];
 
 // userController.guardar = function(request,response){
