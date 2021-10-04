@@ -97,9 +97,28 @@ userController.Eliminar=function(request,response) {
 userController.Listar=function(request,response) {
     
    modelUsuarios.Listar(null,function(respuesta) {
+       //ponemos null porque no le estamos pasando ningun dato o información
         response.json(respuesta)
     })
     //despues de .Listar habria (post,function(){}) pero como en este caso no hay procesamiento en el modelo ni tampoco peticion de datos se coloca null
+}
+
+userController.cargarId=function(request,response) {
+
+    var post = {
+        id:request.body.id
+    }
+
+    if (post.id=="" || post.id == null || post.id == undefined) {
+        response.json({state:false,mensaje:"El campo id es obligatorio"}) 
+       return false   
+   }
+
+    
+    modelUsuarios.cargarId(post,function(respuesta) {
+         response.json(respuesta)
+     })
+
 }
 
 //la variable usuario conecta con routes en el require que hace del controlador

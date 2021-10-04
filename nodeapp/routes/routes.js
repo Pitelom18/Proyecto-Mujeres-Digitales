@@ -29,6 +29,10 @@ application.post('/API/Usuarios/Listar',function(request,response){
     Usuarios.Listar(request,response)
 })
 
+application.post('/API/Usuarios/cargarId',function(request,response){
+    Usuarios.cargarId(request,response)
+})
+
 
 
 

@@ -99,6 +99,22 @@ modelUser.Listar = function (post,callback) {
 })
 }
 
+modelUser.cargarId = function (post,callback) {
+    //aunque copiamos el mismo listar anteriormente en find no tenia parametro ahora necesitamos el id.
+    Mymodel.find({_id:post.id},(error,documentos) =>{
+        if(error){
+            console.log(error)
+            return callback (error)
+        }
+        else{
+            console.log(documentos);
+            return callback(documentos)
+    
+    
+        }
+})
+}
+
 
 
 modelUser.Eliminar = function(post,callback) {
